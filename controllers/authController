@@ -1,0 +1,33 @@
+const firebase = require('firebase');
+const db = require('../config');
+const member = db.collection('member');
+
+const signUp = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+        const uid = userCredential.user.uid;
+        const data = req.body;
+
+        await member.doc(uid).set({
+            uid: uid,
+            ...data
+        });
+        res.send("User signed up successfully");
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
+
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        await firebase.auth().signInWithEmailAndPassword(email, password);
+        res.send("User logged in successfully");
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
+
+module.exports = { signUp, login };
