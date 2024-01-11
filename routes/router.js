@@ -37,6 +37,6 @@ router.get('/category', getAllcategory);
 router.get('/category/sub', getcategory);
 router.post('/category', addSubcategory);
 
-app.use('/.netlify/functions/api', router);
+app.use('/.netlify/functions/router', router);
 
 module.exports.handler = serverless(app);
