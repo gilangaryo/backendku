@@ -15,7 +15,8 @@ const { getAllcategory, getcategory, addSubcategory } = require('../controllers/
 
 
 
-router.get('/', getAllMember);
+router.get('/member', getAllMember);
+
 router.get('/member/:id', getMember);
 // router.post('/member/:id', updateMember);
 router.delete('/member/:id', deleteMember);
@@ -36,6 +37,12 @@ router.post('/notification', trxNotif);
 router.get('/category', getAllcategory);
 router.get('/category/sub', getcategory);
 router.post('/category', addSubcategory);
+
+router.get('/', (req, res) => {
+    res.json({
+        'haii': 'haloo'
+    });
+});
 
 app.use('/.netlify/functions/router', router);
 
