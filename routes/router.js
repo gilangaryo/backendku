@@ -3,7 +3,9 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
+const serverless = require('serverless-http');
 const path = require('path');
+
 
 const { getAllMember, getMember, deleteMember, addMember } = require("../controllers/memberController");
 const { getAllMentor } = require("../controllers/mentorController");
@@ -35,6 +37,6 @@ router.get('/category', getAllcategory);
 router.get('/category/sub', getcategory);
 router.post('/category', addSubcategory);
 
-app.use('/.netlify/functions/api', router)
+app.use('/.netlify/functions/api', router);
 
-module.exports = router;
+module.exports.handler = serverless(app);
