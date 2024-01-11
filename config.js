@@ -1,11 +1,5 @@
 const firebase = require("firebase");
-const { logger } = require("firebase-functions");
-const { onRequest } = require("firebase-functions/v2/https");
-const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 
-// The Firebase Admin SDK to access Firestore.
-const { initializeApp } = require("firebase-admin/app");
-const { getFirestore } = require("firebase-admin/firestore");
 const firebaseConfig = {
   apiKey: "AIzaSyAx_TjUwKVveiyLjlmKuQHayjLMNhyYaMw",
   authDomain: "belajarin-ac6fd.firebaseapp.com",
@@ -20,12 +14,6 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-
-// The Cloud Functions for Firebase SDK to create Cloud Functions and triggers.
-
-
-
-initializeApp();
 
 
 module.exports = db;
