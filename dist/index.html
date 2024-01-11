@@ -4,18 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Auth Button</title>
+    <title>HALO</title>
 </head>
 
 <body>
-    <button id="googleAuthButton">
+    <button id="button" style=".center {
+        text-align: center;
+        border: 3px solid green;
+      }">
         BUTTON
     </button>
 
-    <script>document.getElementById('googleAuthButton').addEventListener('click', () => {
+    <script>document.getElementById('button').addEventListener('click', () => {
             // Make a POST request to the specified URL
-            fetch('https://c209-2001-448a-404a-335c-6da7-bdfb-87ce-6fe4.ngrok-free.app/auth/google', {
-                method: 'POST',
+            fetch('/category', {
+                method: 'get',
                 headers: {
                     'Content-Type': 'application/json', // Adjust content type if needed
                 },
