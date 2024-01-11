@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda server src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
-    
-  },
+  "start": "nodemon index.js",
+  "build": "webpack --config webpack.config.js"
+},
+
+  
   "dependencies": {
     "@google-cloud/firestore": "^7.1.0",
     "cors": "^2.8.5",
