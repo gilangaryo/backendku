@@ -1,0 +1,3 @@
+[build]
+  command = "nodemon index.js"
+  publish = "nodemon"  # Adjust based on your project structure
