@@ -1,0 +1,353 @@
+[debug] [2024-01-11T16:52:31.660Z] ----------------------------------------------------------------------
+[debug] [2024-01-11T16:52:31.662Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-01-11T16:52:31.662Z] CLI Version:   13.0.3
+[debug] [2024-01-11T16:52:31.663Z] Platform:      win32
+[debug] [2024-01-11T16:52:31.663Z] Node Version:  v20.10.0
+[debug] [2024-01-11T16:52:31.663Z] Time:          Thu Jan 11 2024 23:52:31 GMT+0700 (Indochina Time)
+[debug] [2024-01-11T16:52:31.663Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-11T16:52:31.734Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-11T16:52:31.735Z] > authorizing via signed-in user (gilang91668@gmail.com)
+[debug] [2024-01-11T16:52:31.735Z] [iam] checking project belajarin-ac6fd for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-01-11T16:52:31.736Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions [none]
+[debug] [2024-01-11T16:52:31.737Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:31.737Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-11T16:52:33.302Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions 200
+[debug] [2024-01-11T16:52:33.302Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-11T16:52:33.302Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/belajarin-ac6fd/serviceAccounts/belajarin-ac6fd@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-11T16:52:33.302Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/belajarin-ac6fd/serviceAccounts/belajarin-ac6fd@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-11T16:52:35.189Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/belajarin-ac6fd/serviceAccounts/belajarin-ac6fd@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2024-01-11T16:52:35.189Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/belajarin-ac6fd/serviceAccounts/belajarin-ac6fd@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2024-01-11T16:52:35.190Z] [functions] service account IAM check errored, deploy may fail: HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Unknown service account","status":404}
+[info] 
+[info] === Deploying to 'belajarin-ac6fd'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-01-11T16:52:35.193Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd [none]
+[debug] [2024-01-11T16:52:35.846Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd 200
+[debug] [2024-01-11T16:52:35.846Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd {"projectId":"belajarin-ac6fd","projectNumber":"256761147201","displayName":"belajarin","name":"projects/belajarin-ac6fd","resources":{"hostingSite":"belajarin-ac6fd"},"state":"ACTIVE","etag":"1_2a951d3f-2b91-4d2a-9520-015571aeb280"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-11T16:52:35.848Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-11T16:52:35.848Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:35.849Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-11T16:52:35.850Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:35.850Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-11T16:52:35.850Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudbuild.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:35.851Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-11T16:52:35.851Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/artifactregistry.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:37.987Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-11T16:52:37.987Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-11T16:52:37.988Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-11T16:52:37.988Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-11T16:52:37.989Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-11T16:52:37.989Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-11T16:52:37.989Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-11T16:52:37.989Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-11T16:52:37.990Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd/adminSdkConfig [none]
+[debug] [2024-01-11T16:52:38.643Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd/adminSdkConfig 200
+[debug] [2024-01-11T16:52:38.643Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd/adminSdkConfig {"projectId":"belajarin-ac6fd","storageBucket":"belajarin-ac6fd.appspot.com"}
+[debug] [2024-01-11T16:52:38.644Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/belajarin-ac6fd/configs [none]
+[debug] [2024-01-11T16:52:39.557Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/belajarin-ac6fd/configs 200
+[debug] [2024-01-11T16:52:39.558Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/belajarin-ac6fd/configs {}
+[debug] [2024-01-11T16:52:39.559Z] Validating nodejs source
+[debug] [2024-01-11T16:52:42.567Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-01-11T16:52:42.568Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-11T16:52:42.570Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-11T16:52:42.578Z] Found firebase-functions binary at 'D:\Hackfest\backendku\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8505
+
+[debug] [2024-01-11T16:52:42.988Z] Got response from /__/functions.yaml {"endpoints":{"addmessage":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"addmessage"},"makeuppercase":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"messages/{documentId}"},"retry":false},"entryPoint":"makeuppercase"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged D:\Hackfest\backendku\functions (66.96 KB) for uploading 
+[debug] [2024-01-11T16:52:48.047Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/belajarin-ac6fd/locations/-/functions [none]
+[debug] [2024-01-11T16:52:48.794Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/belajarin-ac6fd/locations/-/functions 200
+[debug] [2024-01-11T16:52:48.794Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/belajarin-ac6fd/locations/-/functions {}
+[debug] [2024-01-11T16:52:48.795Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-01-11T16:52:50.387Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/-/functions 200
+[debug] [2024-01-11T16:52:50.387Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/-/functions {}
+[debug] [2024-01-11T16:52:50.387Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/belajarin-ac6fd/databases/(default) [none]
+[debug] [2024-01-11T16:52:50.681Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/belajarin-ac6fd/databases/(default) 200
+[debug] [2024-01-11T16:52:50.681Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/belajarin-ac6fd/databases/(default) {"name":"projects/belajarin-ac6fd/databases/(default)","uid":"d4934908-d373-4d9d-860d-6cdb673fe34e","createTime":"2024-01-07T07:28:39.386787Z","updateTime":"2024-01-07T07:28:39.386787Z","locationId":"asia-southeast2","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-01-11T15:52:50.885230Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"zet","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"INj4k4bm1YMDMOO2icLhyoMD"}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-01-11T16:52:50.683Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com [none]
+[debug] [2024-01-11T16:52:50.683Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:50.684Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com [none]
+[debug] [2024-01-11T16:52:50.684Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:50.685Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/pubsub.googleapis.com [none]
+[debug] [2024-01-11T16:52:50.685Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/pubsub.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:50.686Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/storage.googleapis.com [none]
+[debug] [2024-01-11T16:52:50.686Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/storage.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:52.170Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/storage.googleapis.com 200
+[debug] [2024-01-11T16:52:52.170Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-01-11T16:52:52.170Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com 200
+[debug] [2024-01-11T16:52:52.170Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2024-01-11T16:52:52.171Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com:enable [none]
+[debug] [2024-01-11T16:52:52.171Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:52.172Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com 200
+[debug] [2024-01-11T16:52:52.172Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2024-01-11T16:52:52.172Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com:enable [none]
+[debug] [2024-01-11T16:52:52.172Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com:enable x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:52:52.180Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/pubsub.googleapis.com 200
+[debug] [2024-01-11T16:52:52.180Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-01-11T16:52:53.076Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com:enable 200
+[debug] [2024-01-11T16:52:53.076Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com:enable [omitted]
+[debug] [2024-01-11T16:52:53.734Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com:enable 200
+[debug] [2024-01-11T16:52:53.734Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2024-01-11T16:53:03.089Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com [none]
+[debug] [2024-01-11T16:53:03.089Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:53:03.742Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com [none]
+[debug] [2024-01-11T16:53:03.742Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:53:04.680Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com 200
+[debug] [2024-01-11T16:53:04.680Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-01-11T16:53:05.237Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com 200
+[debug] [2024-01-11T16:53:05.237Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/belajarin-ac6fd/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-01-11T16:53:05.239Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/256761147201/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-01-11T16:53:05.239Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/256761147201/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-01-11T16:53:06.061Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/256761147201/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-01-11T16:53:06.061Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/256761147201/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-256761147201@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"109701478659296543127"}}
+[debug] [2024-01-11T16:53:07.311Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/256761147201/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-01-11T16:53:07.312Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/256761147201/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-256761147201@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"109103989291892853900"}}
+[debug] [2024-01-11T16:53:07.313Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:getIamPolicy [none]
+[debug] [2024-01-11T16:53:08.522Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:getIamPolicy 200
+[debug] [2024-01-11T16:53:08.522Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:getIamPolicy {"version":1,"etag":"BwYOrmEW0Bo=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:256761147201@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-256761147201@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com","serviceAccount:256761147201@cloudservices.gserviceaccount.com","user:dancingkoala14@gmail.com","user:zkyxentertain@gmail.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-256761147201@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasemods.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-firebasemods.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-256761147201@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:gilang91668@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-256761147201@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]}]}
+[debug] [2024-01-11T16:53:08.522Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:setIamPolicy [none]
+[debug] [2024-01-11T16:53:08.523Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:setIamPolicy {"policy":{"version":1,"etag":"BwYOrmEW0Bo=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:256761147201@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-256761147201@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com","serviceAccount:256761147201@cloudservices.gserviceaccount.com","user:dancingkoala14@gmail.com","user:zkyxentertain@gmail.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-256761147201@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasemods.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-firebasemods.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-256761147201@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:service-256761147201@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:gilang91668@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-256761147201@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/run.invoker","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2024-01-11T16:53:09.717Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:setIamPolicy 200
+[debug] [2024-01-11T16:53:09.717Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/256761147201:setIamPolicy {"version":1,"etag":"BwYOrmHl1os=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:256761147201@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-256761147201@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com","serviceAccount:256761147201@cloudservices.gserviceaccount.com","user:dancingkoala14@gmail.com","user:zkyxentertain@gmail.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-256761147201@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/firebasemods.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-firebasemods.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-256761147201@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-256761147201@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-u8o70@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:service-256761147201@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:gilang91668@gmail.com"]},{"role":"roles/run.invoker","members":["serviceAccount:256761147201-compute@developer.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-256761147201@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-740578175@belajarin-ac6fd.iam.gserviceaccount.com","serviceAccount:github-action-742032503@belajarin-ac6fd.iam.gserviceaccount.com"]}]}
+[debug] [2024-01-11T16:53:09.718Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd [none]
+[debug] [2024-01-11T16:53:10.529Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd 200
+[debug] [2024-01-11T16:53:10.529Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/belajarin-ac6fd {"projectId":"belajarin-ac6fd","projectNumber":"256761147201","displayName":"belajarin","name":"projects/belajarin-ac6fd","resources":{"hostingSite":"belajarin-ac6fd"},"state":"ACTIVE","etag":"1_2a951d3f-2b91-4d2a-9520-015571aeb280"}
+[debug] [2024-01-11T16:53:10.530Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2024-01-11T16:53:10.530Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions [none]
+[debug] [2024-01-11T16:53:10.530Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions x-goog-quota-user=projects/belajarin-ac6fd
+[debug] [2024-01-11T16:53:10.530Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-01-11T16:53:10.770Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions 200
+[debug] [2024-01-11T16:53:10.770Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/belajarin-ac6fd:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-01-11T16:53:10.770Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2024-01-11T16:53:10.771Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-01-11T16:53:14.655Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-01-11T16:53:14.655Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-256761147201-us-central1/3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip?GoogleAccessId=service-256761147201@gcf-admin-robot.iam.gserviceaccount.com&Expires=1704993794&Signature=JSF2U%2BBbxV55yWX7n%2Ba8B%2Ffa235od67uf%2BpBNVuc4q7jDLH6z719Ctm6rVfS5p5CwlkwZmn%2FM4AigTXEsMQOA7fUJFu3uBefYVSBb62Swe2SMXz%2BwxsXCumVPgGv%2Biwn%2FMixyAW3dVCgbHun0GWh5LZt2PMc7OdoW0RwukMaKF43VvtlGpAMTgBU9JUKb%2FuksRhp%2Fpa8MEhS9Pb%2FnjQjFfsZtweFc9y3lZiuUd68%2B6veBbWnQNqaDLd%2F4n6gjjn%2BSvsLtx7kBWXEBKoHcWU87GMt2DK16A6jsZrDJ1zuoeJ5bwygiUD9Qq%2FM7Bu%2FKH61o4LILmb%2BlAQd%2Fo9F5OVnXw%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-256761147201-us-central1","object":"3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip"}}
+[debug] [2024-01-11T16:53:14.656Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-256761147201-us-central1/3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip GoogleAccessId=service-256761147201%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1704993794&Signature=JSF2U%2BBbxV55yWX7n%2Ba8B%2Ffa235od67uf%2BpBNVuc4q7jDLH6z719Ctm6rVfS5p5CwlkwZmn%2FM4AigTXEsMQOA7fUJFu3uBefYVSBb62Swe2SMXz%2BwxsXCumVPgGv%2Biwn%2FMixyAW3dVCgbHun0GWh5LZt2PMc7OdoW0RwukMaKF43VvtlGpAMTgBU9JUKb%2FuksRhp%2Fpa8MEhS9Pb%2FnjQjFfsZtweFc9y3lZiuUd68%2B6veBbWnQNqaDLd%2F4n6gjjn%2BSvsLtx7kBWXEBKoHcWU87GMt2DK16A6jsZrDJ1zuoeJ5bwygiUD9Qq%2FM7Bu%2FKH61o4LILmb%2BlAQd%2Fo9F5OVnXw%3D%3D
+[debug] [2024-01-11T16:53:14.656Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-256761147201-us-central1/3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip [stream]
+[debug] [2024-01-11T16:53:15.831Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-256761147201-us-central1/3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip 200
+[debug] [2024-01-11T16:53:15.831Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-256761147201-us-central1/3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (2nd Gen) function addmessage(us-central1)... 
+[info] i  functions: creating Node.js 18 (2nd Gen) function makeuppercase(us-central1)... 
+[debug] [2024-01-11T16:53:15.835Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions functionId=addmessage
+[debug] [2024-01-11T16:53:15.835Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions {"name":"projects/belajarin-ac6fd/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-uploads-256761147201-us-central1","object":"3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"belajarin-ac6fd\",\"storageBucket\":\"belajarin-ac6fd.appspot.com\"}","GCLOUD_PROJECT":"belajarin-ac6fd","EVENTARC_CLOUD_EVENT_SOURCE":"projects/belajarin-ac6fd/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"b2bad39e21c807e9fe06beced48b474331fc2020"}}
+[debug] [2024-01-11T16:53:18.135Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions 400
+[debug] [2024-01-11T16:53:18.135Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions {"error":{"code":400,"message":"Could not create Cloud Run service addmessage. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.","status":"INVALID_ARGUMENT"}}
+[warn] !  functions: Your current project quotas don't allow for the current max instances setting of 100. Either reduce this function's maximum instances, or request a quota increase on the underlying Cloud Run service at https://cloud.google.com/run/quotas. 
+[warn] !  functions: You can adjust the max instances value in your function's runtime options:
+	setGlobalOptions({maxInstances: 10}) 
+[error] Failed to create function projects/belajarin-ac6fd/locations/us-central1/functions/addmessage
+[debug] [2024-01-11T16:53:18.137Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions functionId=makeuppercase
+[debug] [2024-01-11T16:53:18.137Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions {"name":"projects/belajarin-ac6fd/locations/us-central1/functions/makeuppercase","buildConfig":{"runtime":"nodejs18","entryPoint":"makeuppercase","source":{"storageSource":{"bucket":"gcf-v2-uploads-256761147201-us-central1","object":"3e28e848-1ca5-49d2-ac6b-0da79b2e97ab.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"belajarin-ac6fd\",\"storageBucket\":\"belajarin-ac6fd.appspot.com\"}","GCLOUD_PROJECT":"belajarin-ac6fd","EVENTARC_CLOUD_EVENT_SOURCE":"projects/belajarin-ac6fd/locations/us-central1/services/makeuppercase","FUNCTION_SIGNATURE_TYPE":"cloudevent","FUNCTION_TARGET":"makeuppercase"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"b2bad39e21c807e9fe06beced48b474331fc2020"},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","retryPolicy":"RETRY_POLICY_DO_NOT_RETRY","eventFilters":[{"attribute":"database","value":"(default)"},{"attribute":"namespace","value":"(default)"},{"attribute":"document","value":"messages/{documentId}","operator":"match-path-pattern"}],"triggerRegion":"asia-southeast2"}}
+[debug] [2024-01-11T16:53:43.256Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions 400
+[debug] [2024-01-11T16:53:43.256Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/belajarin-ac6fd/locations/us-central1/functions {"error":{"code":400,"message":"Validation failed for trigger projects/belajarin-ac6fd/locations/asia-southeast2/triggers/makeuppercase-686707: Invalid resource state for \"\": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role.","status":"FAILED_PRECONDITION"}}
+[warn] !  functions: HTTP Error: 400, Validation failed for trigger projects/belajarin-ac6fd/locations/asia-southeast2/triggers/makeuppercase-686707: Invalid resource state for "": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role. 
+[warn] !  functions: Since this is your first time using 2nd gen functions, we need a little bit longer to finish setting everything up. Retry the deployment in a few minutes. 
+[warn] !  functions:  failed to create function projects/belajarin-ac6fd/locations/us-central1/functions/makeuppercase 
+[error] Failed to create function projects/belajarin-ac6fd/locations/us-central1/functions/makeuppercase
+[debug] [2024-01-11T16:53:43.261Z] Total Function Deployment time: 27424
+[debug] [2024-01-11T16:53:43.261Z] 2 Functions Deployed
+[debug] [2024-01-11T16:53:43.261Z] 2 Functions Errored
+[debug] [2024-01-11T16:53:43.261Z] 0 Function Deployments Aborted
+[debug] [2024-01-11T16:53:43.261Z] Average Function Deployment time: 14862.5
+[info] 
+[info] Functions deploy had errors with the following functions:
+	addmessage(us-central1)
+	makeuppercase(us-central1)
+[debug] [2024-01-11T16:53:43.655Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-01-11T16:53:43.657Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/addmessage [none]
+[debug] [2024-01-11T16:53:43.658Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase [none]
+[debug] [2024-01-11T16:53:43.658Z] >>> [apiv2][query] GET https://us.gcr.io/v2/belajarin-ac6fd/gcf/us-central1/tags/list [none]
+[debug] [2024-01-11T16:53:45.709Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase 404
+[debug] [2024-01-11T16:53:45.709Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase {"error":{"code":404,"message":"Package \"projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-01-11T16:53:45.709Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/addmessage 404
+[debug] [2024-01-11T16:53:45.709Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/addmessage {"error":{"code":404,"message":"Package \"projects/belajarin-ac6fd/locations/us-central1/repositories/gcf-artifacts/packages/addmessage\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-01-11T16:53:47.190Z] <<< [apiv2][status] GET https://us.gcr.io/v2/belajarin-ac6fd/gcf/us-central1/tags/list 200
+[debug] [2024-01-11T16:53:47.191Z] <<< [apiv2][body] GET https://us.gcr.io/v2/belajarin-ac6fd/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"belajarin-ac6fd/gcf/us-central1","tags":[]}
+[debug] [2024-01-11T16:53:47.191Z] Could not find image for function projects/belajarin-ac6fd/locations/us-central1/functions/addmessage
+[debug] [2024-01-11T16:53:47.191Z] Could not find image for function projects/belajarin-ac6fd/locations/us-central1/functions/makeuppercase
+[debug] [2024-01-11T16:53:47.191Z] Functions deploy failed.
+[debug] [2024-01-11T16:53:47.191Z] {
+  "endpoint": {
+    "id": "addmessage",
+    "project": "belajarin-ac6fd",
+    "region": "us-central1",
+    "entryPoint": "addmessage",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"belajarin-ac6fd\",\"storageBucket\":\"belajarin-ac6fd.appspot.com\"}",
+      "GCLOUD_PROJECT": "belajarin-ac6fd",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/belajarin-ac6fd/locations/us-central1/services/addmessage"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "b2bad39e21c807e9fe06beced48b474331fc2020"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/belajarin-ac6fd/locations/us-central1/functions/addmessage"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/belajarin-ac6fd/locations/us-central1/functions/addmessage",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Could not create Cloud Run service addmessage. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.",
+            "status": "INVALID_ARGUMENT"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, Could not create Cloud Run service addmessage. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[debug] [2024-01-11T16:53:47.191Z] {
+  "endpoint": {
+    "id": "makeuppercase",
+    "project": "belajarin-ac6fd",
+    "region": "us-central1",
+    "entryPoint": "makeuppercase",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "eventTrigger": {
+      "eventType": "google.cloud.firestore.document.v1.created",
+      "retry": false,
+      "eventFilters": {
+        "database": "(default)",
+        "namespace": "(default)"
+      },
+      "eventFilterPathPatterns": {
+        "document": "messages/{documentId}"
+      },
+      "region": "asia-southeast2"
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"belajarin-ac6fd\",\"storageBucket\":\"belajarin-ac6fd.appspot.com\"}",
+      "GCLOUD_PROJECT": "belajarin-ac6fd",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/belajarin-ac6fd/locations/us-central1/services/makeuppercase"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "b2bad39e21c807e9fe06beced48b474331fc2020"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/belajarin-ac6fd/locations/us-central1/functions/makeuppercase"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/belajarin-ac6fd/locations/us-central1/functions/makeuppercase",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Validation failed for trigger projects/belajarin-ac6fd/locations/asia-southeast2/triggers/makeuppercase-686707: Invalid resource state for \"\": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role.",
+            "status": "FAILED_PRECONDITION"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, Validation failed for trigger projects/belajarin-ac6fd/locations/asia-southeast2/triggers/makeuppercase-686707: Invalid resource state for \"\": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[error] Error: There was an error deploying functions:
+[error] - Error Failed to create function addmessage in region us-central1
+[error] - Error Failed to create function makeuppercase in region us-central1

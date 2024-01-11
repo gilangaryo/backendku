@@ -12,6 +12,7 @@ const { getAllMentor } = require("../controllers/mentorController");
 const { signUp, login, logout } = require('../controllers/authController');
 const { pay, trxNotif } = require('../controllers/paymentController');
 const { getAllcategory, getcategory, addSubcategory } = require('../controllers/categoryController');
+const { sendEmail } = require('../controllers/sendEmailController');
 
 
 
@@ -42,6 +43,8 @@ router.get('/category/:category/:subCategory', getcategory);
 
 router.post('/category/:category/:subCategory', addSubcategory);
 router.post('/category/:category/:subCategory', addSubcategory);
+
+router.post('/sendemail', sendEmail);
 
 router.get('/', (req, res) => {
     res.json({
