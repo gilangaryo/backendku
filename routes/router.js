@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const app = express();
 const path = require('path');
 
 const { getAllMember, getMember, deleteMember, addMember } = require("../controllers/memberController");
@@ -12,7 +13,7 @@ const { getAllcategory, getcategory, addSubcategory } = require('../controllers/
 
 
 
-router.get('/member', getAllMember);
+router.get('/', getAllMember);
 router.get('/member/:id', getMember);
 // router.post('/member/:id', updateMember);
 router.delete('/member/:id', deleteMember);
@@ -34,5 +35,6 @@ router.get('/category', getAllcategory);
 router.get('/category/sub', getcategory);
 router.post('/category', addSubcategory);
 
+app.use('/.netlify/functions/api', router)
 
 module.exports = router;
