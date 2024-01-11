@@ -36,7 +36,12 @@ router.post('/notification', trxNotif);
 // category
 router.get('/category', getAllcategory);
 router.get('/category/sub', getcategory);
-router.post('/category', addSubcategory);
+router.get('/category/:category', getcategory);
+router.get('/category/:category/:subCategory', getcategory);
+
+
+router.post('/category/:category/:subCategory', addSubcategory);
+router.post('/category/:category/:subCategory', addSubcategory);
 
 router.get('/', (req, res) => {
     res.json({
@@ -46,4 +51,4 @@ router.get('/', (req, res) => {
 
 app.use('/.netlify/functions/router', router);
 
-module.exports.handler = serverless(app);
+module.exports = router;

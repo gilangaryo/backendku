@@ -3,32 +3,6 @@ const express = require('express');
 const router = express.Router();
 const db = require("../config");
 
-
-const getAllcategory2 = async (req, res) => {
-    try {
-        const category = db.collection("categories");
-
-        const snapshot = await category.get();
-
-        const categories = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-        }));
-
-
-
-        const snapSubMenu = await category.doc(categories.id).get();
-        const collectionSubMenu = snapSubMenu.ref.collection("subMenu");
-        const getSubMenu = await collectionSubMenu.get();
-        const sub_menu = getSubMenu.docs.map((doc) => ({
-            ...doc.data()
-        }));
-        res.send(sub_menu);
-
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-};
 const getAllcategory = async (req, res) => {
     const categoryCollection = db.collection("categories");
 
@@ -83,13 +57,6 @@ const getAllcategory = async (req, res) => {
 
 
 
-
-
-
-
-
-
-
 const getcategory = async (req, res) => {
     try {
         const uid = req.params.id;
@@ -139,12 +106,12 @@ const updatecategory = async (req, res) => {
 
 const addSubcategory = async (req, res) => {
     try {
-        // const { categoryName, subCollectionName } = req.params;
-        const categoryRef = db.collection('categories').doc("programming");
+        const { category, subCategory } = req.params;
+        const categoryRef = db.collection('categories').doc(category);
         const { title, judul } = req.body;
 
         if (title) {
-            const subCollectionRef = categoryRef.collection("subCategory").doc("ai-development");
+            const subCollectionRef = categoryRef.collection("subCategory").doc(subCategory);
             const subCollectionRef2 = subCollectionRef.collection("subMenu");
 
             await subCollectionRef2.doc(judul).set({
@@ -163,6 +130,9 @@ const addSubcategory = async (req, res) => {
     }
 
 };
+
+
+
 const deletecategory = async (req, res) => {
 
     const uid = req.params.id;
