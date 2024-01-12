@@ -1,16 +1,13 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+const route = require('./routes/router');
 
-const app = express()
-const PORT = 8000
+const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
+app.use(express.json());
+app.use(cors());
+app.use('/', route);
 
-app.get('/about', (req, res) => {
-    res.send('About route 🎉 ')
-})
+const port = 4000;
+app.listen(port, () => console.log("Up & Running on port ", port));
 
-app.listen(PORT, () => {
-    console.log(`✅ Server is running on port ${PORT}`);
-})
