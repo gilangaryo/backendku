@@ -140,6 +140,6 @@ router.post('/uploadImage', uploadImageku);
 
 
 
-app.use('/.netlify/functions/router', router);
+// app.use('/.netlify/functions/router', router);
 
 module.exports = router;

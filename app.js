@@ -1,13 +1,17 @@
-const express = require("express");
-const cors = require("cors");
-const router = require('./routes/router');
-
+const express = require('express');
+const { getAllcategory, getCategory, getSubCategory, getSubMenu, addSubcategory } = require('../controllers/categoryController');
 const app = express();
+const PORT = process.env.PORT || 8000;
 
-app.use(express.json());
-app.use(cors());
-app.use('/', router);
+app.get('/', (req, res) => {
+    res.send('Hello, this is the home route!');
+});
 
-const port = 8000;
-app.listen(port, () => console.log("Up & Running on port ", port));
+app.get('/about', (req, res) => {
+    const categories = getAllcategory();
+    res.json(categories);  // Adjust this based on the actual response from getAllcategory()
+});
 
+app.listen(PORT, () => {
+    console.log(`✅ Server is running on port ${PORT}`);
+});
