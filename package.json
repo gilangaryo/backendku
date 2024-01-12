@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon index.js",
-    "build": "netlify deploy --prod"
+    "start": "npm run build",
+    "build": "nodemon index.js"
   },
   "dependencies": {
     "@firebase/storage": "^0.12.0",
