@@ -44,7 +44,7 @@ const addMentor = async (req, res) => {
 
             });
 
-            // sendEmail(email);
+            sendEmail(email);
             res.status(201).json({ message: 'Mentor added successfully', mentorId: mentorDocRef.id });
         } else {
             const mentorCollection = db.collection('register');
@@ -60,7 +60,7 @@ const addMentor = async (req, res) => {
                 bankName: bank
 
             });
-            // sendEmail(email);
+            sendEmail(email);
             res.status(201).json({ message: 'Mentor community added successfully', mentorId: mentorDocRef.id });
         }
 

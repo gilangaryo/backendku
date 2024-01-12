@@ -21,7 +21,7 @@ const sendEmail = async (email) => {
             to: email,
             message: {
                 subject: "Status Mentor",
-                text: "Hi sayang tunggu 5 hari ya buat ketemu hehehehehe",
+                text: "Halo selamat datang di Belajarin!",
                 html: `
                 <html>
                     <head>
@@ -31,8 +31,8 @@ const sendEmail = async (email) => {
                     </head>
                     <body>
                         <h1>Hello from Belajarin</h1>
-                        <p>This is the HTML section of the email body.</p>
-                        <code>This is a code snippet.</code>
+                        <p>Tunggu Pengumuman berikutnya yaa!!</p>
+                        <code></code>
                     </body>
                 </html>
             `,
