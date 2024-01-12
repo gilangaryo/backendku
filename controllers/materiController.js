@@ -5,21 +5,22 @@ const db = require("../config");
 
 const addMateri = async (req, res) => {
     try {
-        const { category, categoryName } = req.params;
-        const { title, judul } = req.body;
+        // const { category, subCategory, subMenu } = req.params;
+        const { title, category, subCategory, subMenu } = req.body;
 
         const categoryRef = db.collection('categories').doc(category);
-        const subCollectionRef = categoryRef.collection("subCategory").doc(categoryName);
-        const subCollectionRef2 = subCollectionRef.collection("subMenu").doc("sssss");
+        const subCollectionRef = categoryRef.collection("subCategory").doc(subCategory);
+        const subCollectionRef2 = subCollectionRef.collection("subMenu").doc(subMenu);
         const subCollectionRef3 = subCollectionRef2.collection("materi").doc();
 
         if (title) {
 
+            const img = "https://firebasestorage.googleapis.com/v0/b/belajarin-ac6fd.appspot.com/o/fotoJs.png?alt=media&token=6735d303-36e3-4cb4-9dff-33d2e642f11c";
 
             await subCollectionRef3.set({
                 materi_id: subCollectionRef3.id,
                 title: title,
-                image: 'http'
+                image: img
             });
 
             res.status(201).send('SUKSES ANJAYY!!');
@@ -44,15 +45,19 @@ const getMateri = async (req, res) => {
         // ambil kategori
         const categoryRef = db.collection('categories').doc(category);
 
+        // ambil subkategori
         const subCategoryRef = categoryRef.collection("subCategory").doc(categoryName);
-        const subMenuRef = subCategoryRef.collection("subMenu").doc("sssss");
+
+        // ambil submenu
+        const subMenuRef = subCategoryRef.collection("subMenu").doc("");
+
+        // ambil materi
         const materiRef = subMenuRef.collection("materi").doc();
 
         const snapshot = await materiRef.get();
         const allCategories = [];
 
         if (snapshot) {
-
 
             const submenu = subMenuSnapshot.docs.map((doc) => ({
                 id: doc.id,
@@ -81,6 +86,7 @@ const getMateri = async (req, res) => {
 
 
 module.exports = {
-    addMateri
+    addMateri,
+    getMateri
 
 };

@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const db = require("../config");
 
-
+const member = db.collection("member");
 const getAllMember = async (req, res) => {
     try {
         const snapshot = await member.get();
@@ -65,7 +65,7 @@ const deleteMember = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-const member = db.collection("member");
+
 
 const addMember = async (req, res) => {
     try {

@@ -16,6 +16,66 @@ const getAllcategory = async (req, res) => {
 
             const subCollectionSnapshot = await subCollectionRef.get();
             const subCollection = subCollectionSnapshot.docs.map((doc) => ({
+                key: categoryId,
+                label: categoryDoc.title,
+                id: doc.id,
+                ...doc.data()
+            }));
+
+            const categoryWithSubMenu = {
+
+                category_id: categoryId,
+                category_title: categoryDoc.data().title,
+                subCategory: []
+            };
+
+            for (const subCatItem of subCollection) {
+                const subMenuRef = subCollectionRef.doc(subCatItem.id).collection('subMenu');
+                const subMenuSnapshot = await subMenuRef.get();
+
+                const submenu = subMenuSnapshot.docs.map((doc) => ({
+
+                    id: doc.id,
+                    ...doc.data()
+                }));
+
+                const subCategoryWithMenu = {
+
+                    sub_title: subCatItem.title,
+                    sub_id: subCatItem.id,
+                    sub_image: subCatItem.image,
+                    subMenu: submenu,
+                };
+
+                categoryWithSubMenu.subCategory.push(subCategoryWithMenu);
+            }
+
+            allCategories.push(categoryWithSubMenu);
+        }
+
+        res.send(allCategories);
+    } catch (error) {
+        // Handle errors, e.g., by sending an error response
+        res.status(500).send("Internal Server Error");
+    }
+};
+
+
+
+
+const getCategory = async (req, res) => {
+    const categoryCollection = db.collection("categories");
+    try {
+        const categoryRef = req.params.category;
+        const categoriesSnapshot = await categoryCollection.doc(categoryRef).get();
+        const allCategories = [];
+
+        for (const categoryDoc of categoriesSnapshot.docs) {
+            const categoryId = categoryDoc.id;
+            const subCollectionRef = categoryDoc.ref.collection('subCategory');
+
+            const subCollectionSnapshot = await subCollectionRef.get();
+            const subCollection = subCollectionSnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
             }));
@@ -57,29 +117,97 @@ const getAllcategory = async (req, res) => {
 
 
 
-const getcategory = async (req, res) => {
+const getSubCategory = async (req, res) => {
     try {
-        const uid = req.params.id;
-        const snapshot = await category.doc("programming").get();
+        const categories = db.collection("categories");
+        const categoryRef = req.params.category;
+        const snapshot = await categories.doc(categoryRef).get();
 
         if (!snapshot.exists) {
-            return res.status(404).json({ error: 'category not found' });
+            return res.status(404).json({ error: 'subcategory not found' });
 
         }
-
-        const sub = snapshot.ref.collection("subMenu");
-        const submenu = await sub.get();
-        const list = submenu.docs.map((doc) => ({
+        // ambil all sub kategori
+        const sub = snapshot.ref.collection("subCategory");
+        const subCategory = await sub.get();
+        const list = subCategory.docs.map((doc) => ({
+            id: doc.id,
             header: doc.title,
             ...doc.data()
         }));
+        // end
 
-        res.send(list);
+        // ambil sub menu = anaknya
+        const snapshot2 = await sub.doc(subCategoryRef).get();
+
+        const subMenu = snapshot2.ref.collection("subMenu");
+        const allSub = await subMenu.get();
+        const list2 = allSub.docs.map((doc) => ({
+
+            subCategory: list,
+            SubMenuu: {
+                header: doc.title,
+                id: doc.id,
+                ...doc.data()
+            }
+        }));
+
+
+        res.send(list2);
     } catch (error) {
         console.error("Error fetching category:", error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+const getSubMenu = async (req, res) => {
+    try {
+        const categoryRef = req.params.category;
+        const subCategoryRef = req.params.subCategory;
+
+        // ambil kategori programming
+        const categories = db.collection("categories");
+        const snapshot = await categories.doc(categoryRef).get();
+
+        // ceking
+        if (!snapshot.exists) {
+            return res.status(404).json({ error: 'category not found' });
+        }
+
+        // ambil all sub kategori
+        const sub = snapshot.ref.collection("subCategory");
+        const subCategory = await sub.get();
+        const list = subCategory.docs.map((doc) => ({
+            id: doc.id,
+            header: doc.title,
+            ...doc.data()
+        }));
+        // end
+
+        // ambil sub menu = anaknya
+        const snapshot2 = await sub.doc(subCategoryRef).get();
+
+        const subMenu = snapshot2.ref.collection("subMenu");
+        const allSub = await subMenu.get();
+        const list2 = allSub.docs.map((doc) => ({
+
+            subCategory: list,
+            SubMenuu: {
+                header: doc.title,
+                id: doc.id,
+                ...doc.data()
+            }
+        }));
+
+
+        res.send(list2);
+    } catch (error) {
+        console.error("Error fetching category:", error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+
 
 
 const updatecategory = async (req, res) => {
@@ -153,7 +281,9 @@ const deletecategory = async (req, res) => {
 
 module.exports = {
     getAllcategory,
-    getcategory,
+    getCategory,
+    getSubCategory,
+    getSubMenu,
     updatecategory,
     deletecategory,
     addSubcategory
