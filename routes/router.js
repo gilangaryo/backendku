@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const fileUpload = require('express-fileupload');
+
 const path = require('path');
 const multer = require('multer');
 // const uuid = require("uuid-v4");
@@ -73,7 +73,7 @@ router.get('/', (req, res) => {
 
 
 // router.post('/upload', upload);
-
+const fileUpload = require('express-fileupload');
 router.use(fileUpload({
     createParentPath: true,
 }));
