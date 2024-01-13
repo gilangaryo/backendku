@@ -2,14 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-
 const path = require('path');
-const multer = require('multer');
 // const uuid = require("uuid-v4");
-
 const app = express();
-const serverless = require('serverless-http');
-
 
 const { getAllMember, getMember, deleteMember, addMember } = require("../controllers/memberController");
 const { getAllMentor, addMentor } = require("../controllers/mentorController");
@@ -27,7 +22,6 @@ const { uploadImageku } = require('../controllers/uploadImage');
 router.get('/member', getAllMember);
 
 router.get('/member/:id', getMember);
-// router.post('/member/:id', updateMember);
 router.delete('/member/:id', deleteMember);
 router.post('/member/add', addMember);
 
@@ -51,7 +45,6 @@ router.get('/getBank', getBank);
 
 router.get('/category/:category', getCategory);
 router.get('/category/:category/:subCategory', getSubMenu);
-// router.get('/category/:category/:subCategory/:subMenu', getSubCategory);
 
 // category :programming :mobile-development :
 
