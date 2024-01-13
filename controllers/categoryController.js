@@ -55,8 +55,6 @@ const getAllcategory = async (req, res) => {
 
         res.send(allCategories);
     } catch (error) {
-        // Handle errors, e.g., by sending an error response
-        res.status(500).send("Internal Server Error");
     }
 };
 
@@ -110,8 +108,7 @@ const getCategory = async (req, res) => {
 
         res.send(allCategories);
     } catch (error) {
-        // Handle errors, e.g., by sending an error response
-        res.status(500).send("Internal Server Error");
+        res.status().send("Internal Server Error");
     }
 };
 

@@ -74,11 +74,12 @@ router.get('/', (req, res) => {
 
 // router.post('/upload', upload);
 
-router.use(fileUpload({
-    createParentPath: true,
-}));
+
 
 router.post('/uploads', (req, res) => {
+    router.use(fileUpload({
+        createParentPath: true,
+    }));
     const { file } = req.files;
 
 
@@ -86,14 +87,11 @@ router.post('/uploads', (req, res) => {
         return res.status(400).json({ message: 'No files were uploaded.' });
     }
 
-    // Move the file to the designated folder
     const assetsFolder = path.join(__dirname, "assets");
     file.mv(path.join(assetsFolder, file.name), (err) => {
         if (err) {
             return res.status(500).json({ message: 'Error uploading file.', error: err });
         }
-
-        // File uploaded successfully
 
         res.status(200).json({ message: 'File uploaded successfully.' });
     });

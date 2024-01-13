@@ -3,15 +3,19 @@ const express = require('express');
 const router = express.Router();
 const db = require("../config");
 
-const member = db.collection("member");
 const getAllMember = async (req, res) => {
     try {
+        const member = db.collection("member");
+
         const snapshot = await member.get();
         const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        res.send(list);
+
+        res.json(list);
+
     } catch (error) {
-        res.status(400).send(error.message);
+        res.send(500).json({ error: 'error' });
     }
+
 };
 
 const getMember = async (req, res) => {
