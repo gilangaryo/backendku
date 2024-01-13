@@ -74,12 +74,12 @@ router.get('/', (req, res) => {
 
 // router.post('/upload', upload);
 
-
+router.use(fileUpload({
+    createParentPath: true,
+}));
 
 router.post('/uploads', (req, res) => {
-    router.use(fileUpload({
-        createParentPath: true,
-    }));
+
     const { file } = req.files;
 
 
